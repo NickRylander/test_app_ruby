@@ -18,17 +18,3 @@
 #puts "Your full name reversed is #{full_name.reverse!}"
 
 #puts "Your name has #{name_length} characters in it"
-
-# multiplication , division, addition, subtraction
-
-puts "Simple Calculator"
-20.times { print "-" }
-puts
-puts "Enter the first number:"
-num_1 = gets.chomp
-puts "Enter the second number:"
-num_2 = gets.chomp
-puts "If you multiply those numbers together you get #{num_1.to_i * num_2.to_i}"
-puts "If you divide those numbers together you get #{num_1.to_i / num_2.to_i}"
-puts "If you add those numbers together you get #{num_1.to_i + num_2.to_i}"
-puts "If you subtract those numbers together you get #{num_1.to_i - num_2.to_i}"

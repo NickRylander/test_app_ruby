@@ -1,14 +1,16 @@
 # CHALLENGE
-# Given the head of a singly linked list, return true if it is a palindrome.
+# Given an array nums. We define a running sum of an array as runningSum[i] = sum(nums[0]…nums[i]).
+# Return the running sum of nums.
 
-def is_palindrome(head)
-    if head.reverse === head
-      p true
-    else
-      p false
+def running_sum(nums)
+    newArr = []
+    total = 0
+    nums.each do |n|
+      newArr << (total += n)
     end
+    p newArr
 end
 
-is_palindrome([1, 2, 2, 1])
-is_palindrome([1, 2])
-is_palindrome([1, 2, 3, 2, 1])
+running_sum([1,2,3,4]) # => [1,3,6,10]
+running_sum([1,1,1,1,1]) # => [1,2,3,4,5]
+running_sum([3,1,2,10,1]) # => [3,4,6,16,17]

@@ -2,51 +2,37 @@
 # Given a roman numeral, convert it into an integer
 
 def roman_to_int(s)
-  newArr = s.downcase.split("")
+  newArr = []
   total = 0
+  if s.include?("IV")
+    four = s.gsub!("IV", "IIII")
+    newArr << four.downcase.chars
+  else
+    newArr = s.downcase.chars
+  end
   newArr.each do |n|
+    p n
     if n === "i"
       total += 1
-    end
-    if n === "v"
+    elsif n === "v"
       total += 5
-    end
-    if n === "x"
+    elsif n === "x"
       total += 10
-    end
-    if n === "l"
+    elsif n === "l"
       total += 50
-    end
-    if n === "c"
+    elsif n === "c"
       total += 100
-    end
-    if n === "d"
+    elsif n === "d"
       total += 500
-    end
-    if n === "m"
+    elsif n === "m"
       total += 1000
+    else
+      p "BROKEN"
     end
   end
   p total
 end
 
-#if s.include?
-
-# i = 1
-# ii = 2
-# iv = 4
-# v = 5
-# ix = 9
-# x = 10
-# xl = 40
-# l = 50
-# xc = 90
-# c = 100
-# cd = 400
-# d = 500
-# cm = 900
-# m = 1000
-
-# roman_to_int("III")
+roman_to_int("III")
 roman_to_int("IV")
 # roman_to_int("MCMXCIV")
